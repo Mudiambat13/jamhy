@@ -1,1 +1,75 @@
-<p>equipment works!</p>
+<!-- En-tête de la section -->
+<div class="bg-gray-50 py-16">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-jamhy-blue mb-4">Nos Équipements</h1>
+      <p class="text-xl text-gray-600">Location et vente d'engins de construction</p>
+    </div>
+
+    <!-- Filtres -->
+    <div class="flex justify-center mb-8">
+      <div class="inline-flex rounded-md shadow-sm">
+        <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-50">
+          Tous
+        </button>
+        <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border-t border-b border-gray-300 hover:bg-gray-50">
+          Disponibles
+        </button>
+        <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-50">
+          En location
+        </button>
+      </div>
+    </div>
+
+    <!-- Grille d'équipements -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div *ngFor="let equipment of equipments" 
+           class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <div class="relative">
+          <img [src]="equipment.image" 
+               [alt]="equipment.name"
+               class="w-full h-64 object-cover" />
+          <div class="absolute top-4 right-4">
+            <span [class]="equipment.available ? 
+                          'bg-green-100 text-green-800' : 
+                          'bg-red-100 text-red-800'" 
+                  class="px-3 py-1 rounded-full text-sm font-medium">
+              {{equipment.available ? 'Disponible' : 'En location'}}
+            </span>
+          </div>
+        </div>
+        
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-jamhy-blue mb-2">{{equipment.name}}</h3>
+          <p class="text-gray-600 mb-4">{{equipment.description}}</p>
+          
+          <div class="space-y-2">
+            <h4 class="font-medium text-gray-900">Spécifications:</h4>
+            <ul class="list-disc list-inside text-gray-600">
+              <li *ngFor="let spec of equipment.specifications">{{spec}}</li>
+            </ul>
+          </div>
+          
+          <div class="mt-6">
+            <a routerLink="/contact" 
+               class="inline-block bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg transition-colors">
+              Demander un devis
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section Contact -->
+<div class="bg-white py-16">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-jamhy-blue mb-4">Besoin d'un équipement spécifique ?</h2>
+    <p class="text-gray-600 mb-8">Contactez-nous pour discuter de vos besoins en équipements</p>
+    <a routerLink="/contact" 
+       class="inline-block bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg transition-colors">
+      Nous contacter
+    </a>
+  </div>
+</div>

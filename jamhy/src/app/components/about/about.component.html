@@ -1,1 +1,74 @@
-<p>about works!</p>
+<div class="min-h-screen bg-gray-50">
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-r from-jamhy-blue to-blue-900 py-20">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold text-white mb-6">À Propos de JAMHY Sarl</h1>
+      <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+        Une entreprise congolaise leader dans la construction et les solutions énergétiques, 
+        engagée pour l'excellence et l'innovation depuis 2023.
+      </p>
+    </div>
+  </div>
+
+  <!-- Histoire et Mission -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-jamhy-blue mb-6">Notre Histoire</h2>
+          <p class="text-gray-700 mb-4">
+            Fondée en 2023 à Kolwezi, JAMHY Sarl est née de la vision d'entrepreneurs congolais 
+            déterminés à contribuer au développement du pays à travers des solutions innovantes 
+            en construction et en énergie.
+          </p>
+          <p class="text-gray-700">
+            Notre croissance rapide témoigne de notre engagement envers l'excellence et 
+            de la confiance que nos clients nous accordent.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <img src="assets/images/about-history-1.jpg" alt="JAMHY Histoire" 
+               class="rounded-lg shadow-lg">
+          <img src="assets/images/about-history-2.jpg" alt="JAMHY Aujourd'hui" 
+               class="rounded-lg shadow-lg mt-8">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nos Valeurs -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-jamhy-blue mb-12">Nos Valeurs</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div *ngFor="let value of values" 
+             class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+          <div class="text-primary text-3xl mb-4">
+            <i [class]="'fas fa-' + value.icon"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-jamhy-blue mb-3">{{value.title}}</h3>
+          <p class="text-gray-600">{{value.description}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notre Équipe -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-jamhy-blue mb-12">Notre Équipe</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div *ngFor="let member of team" 
+             class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <img [src]="member.image" [alt]="member.name" 
+               class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-jamhy-blue mb-2">{{member.name}}</h3>
+            <p class="text-primary font-medium mb-3">{{member.position}}</p>
+            <p class="text-gray-600">{{member.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

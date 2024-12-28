@@ -6,11 +6,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#007bff',
-        secondary: '#6c757d',
-        'jamhy-blue': '#1a365d',
-        'jamhy-gray': '#4a5568',
-      },
+        'primary': 'var(--primary)',
+        'jamhy-blue': 'var(--jamhy-blue)',
+      }
     },
   },
   plugins: [],
